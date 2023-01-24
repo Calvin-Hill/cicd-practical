@@ -23,7 +23,7 @@ def test_valid_positive_timezone():
 def test_valid_negative_timezone():
     timezone = -1
     _, current_time, _ = get_time(name, timezone)
-    assert int(current_time[:2]) < datetime.utcnow().hour
+    assert int(current_time.split(':')[0]) < datetime.utcnow().hour
 
 def test_invalid_timezone():
     timezone = "+2"
